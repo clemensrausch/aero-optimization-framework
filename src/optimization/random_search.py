@@ -28,6 +28,8 @@ class RandomSearchOptimizer(BaseOptimizer):
 
         return self.rng.uniform(lb, ub, size=(n_points, len(lb)))
 
+    def tell(self, X: np.ndarray, y: np.ndarray, meta: dict[str, Any] | None = None):
+        self._store_observations(X, y)
 
 
     pass
